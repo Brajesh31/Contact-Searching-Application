@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Check required docs and verify protected files retain original Git blob IDs."""
+"""Check required repository support paths and protected original Git blob IDs."""
 from pathlib import Path
 import hashlib
-import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,9 +9,24 @@ REQUIRED = [
     "README.md", "LICENSE", "SECURITY.md", "CONTRIBUTING.md",
     "CODE_OF_CONDUCT.md", "SUPPORT.md", "CHANGELOG.md", "ROADMAP.md",
     "AUTHORS.md", "CITATION.cff", "CODEOWNERS", "GOVERNANCE.md",
-    "docs/README.md", "docs/architecture.md", "docs/user-guide.md",
-    "docs/testing.md", "docs/security.md", "scripts/README.md",
+    "CODE_STYLE.md", ".editorconfig", ".gitattributes",
+    "docs/README.md", "docs/checklist-coverage.md", "docs/architecture.md",
+    "docs/architecture/README.md", "docs/product/features.md",
+    "docs/user-guide.md", "docs/data-format.md", "docs/testing.md",
+    "docs/testing/feature-test-matrix.md", "docs/security.md",
+    "docs/accessibility/README.md", "docs/maintenance/README.md",
+    "docs/templates/README.md", "docs/assets/README.md",
+    "scripts/README.md", "scripts/validate_docs.py",
+    "scripts/validate_svg.py", "scripts/validate_mermaid.py",
+    "scripts/check_license.py", "tests/README.md", "tests/test_cli_smoke.py",
     ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/ISSUE_TEMPLATE/bug_report.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.yml",
+    ".github/ISSUE_TEMPLATE/documentation.yml",
+    ".github/workflows/docs-validation.yml",
+    ".github/workflows/cpp-build.yml",
+    ".github/workflows/codeql.yml",
+    ".github/dependabot.yml",
 ]
 PROTECTED_BLOBS = {
     "main.cpp": "4d6424069d175b4c6f8f301a3e45ca62726ff6cd",
@@ -26,22 +40,33 @@ PROTECTED_BLOBS = {
     ".idea/.gitignore": "13566b81b018ad684f3a35fee301741b2734c8f4",
     ".gitignore": "adb36c821965862397d65fa68e26cd2433c97140",
 }
+
 errors = []
 for item in REQUIRED:
     if not (ROOT / item).is_file():
         errors.append(f"Missing required path: {item}")
+
 for rel, expected in PROTECTED_BLOBS.items():
     path = ROOT / rel
     if not path.is_file():
         errors.append(f"Protected file missing: {rel}")
         continue
     data = path.read_bytes()
-    actual = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
+    actual = hashlib.sha1(
+        b"blob " + str(len(data)).encode("ascii") + b"\0" + data
+    ).hexdigest()
     if actual != expected:
-        errors.append(f"Protected file changed: {rel} (expected {expected}, got {actual})")
+        errors.append(
+            f"Protected file changed: {rel} (expected {expected}, got {actual})"
+        )
+
 if errors:
     for error in errors:
         print(f"ERROR: {error}")
     sys.exit(1)
-print(f"PASS: {len(REQUIRED)} required documentation/support files exist.")
-print(f"PASS: all {len(PROTECTED_BLOBS)} protected original files match their audited Git blob hashes.")
+
+print(f"PASS: {len(REQUIRED)} required documentation/support paths exist.")
+print(
+    f"PASS: all {len(PROTECTED_BLOBS)} protected original files match "
+    "their audited Git blob hashes."
+)
