@@ -2,15 +2,25 @@
 
 ## Current repository state
 
-The audited application tree does not contain an automated unit or integration test suite. This page defines safe manual checks and separates them from tests that have not yet been implemented.
+The original application tree did not contain an automated test suite. Repository enhancement now adds one standard-library Python CLI integration smoke test. There are still no unit tests, fuzz tests, or performance benchmarks.
 
 ## Build check
 
 ```bash
-g++ -std=gnu++17 -Wall -Wextra main.cpp -o contact-search
+g++ -std=gnu++17 -Wall -Wextra -Wpedantic main.cpp -o contact-search
 ```
 
-This command is a suggested local compiler invocation, not a recorded successful CI run.
+The GitHub Actions build job executes this compiler command and then runs the CLI smoke test.
+
+## Automated CLI smoke test
+
+```bash
+python3 tests/test_cli_smoke.py ./contact-search
+```
+
+The test launches the real executable in a temporary directory using synthetic records. It verifies startup loading, adding a contact, exact search, case-insensitive partial-name search, persistence to the temporary data file, and vCard 3.0 export. The test does not read or overwrite the tracked contacts.txt file.
+
+See [tests/README.md](../tests/README.md) and [feature-to-test matrix](testing/feature-test-matrix.md).
 
 ## Manual smoke-test scenarios
 
@@ -36,11 +46,14 @@ Use a disposable working copy and synthetic data.
 
 ```bash
 python3 scripts/validate_docs.py
+python3 scripts/validate_svg.py
+python3 scripts/validate_mermaid.py
+python3 scripts/check_license.py
 python3 scripts/repository_audit.py
 ```
 
-These scripts validate documentation and the preservation boundary only. They do not execute or prove application correctness.
+These checks validate documentation, supporting assets, licensing markers, and the preservation boundary. They do not prove every application behavior.
 
 ## Not yet available
 
-No automated unit, integration, fuzz, performance, accessibility, or security test suite is claimed.
+No automated unit-test suite, fuzzing, load/performance testing, accessibility audit, or security certification is claimed.

@@ -16,14 +16,14 @@ This matrix applies the supplied Production-Grade GitHub Repository Enhancement 
 | External integrations and webhooks | ➖ Not applicable | No external service integrations found |
 | Security and threat assessment | ✅ Addressed at documentation level | Threat model, data protection, incident response, backup/recovery; no audit claim |
 | Accessibility | ✅ Guidance added | Terminal accessibility review checklist; no conformance claim |
-| Testing and QA | ✅ Addressed at planning/automation level | Manual test plan, feature matrix, C++ compile workflow, docs validators; no unit test suite invented |
+| Testing and QA | ✅ Addressed at smoke-test level | Disposable-data CLI smoke test, manual test plan, feature matrix, C++ build workflow, docs validators; no unit suite |
 | Deployment and infrastructure | ✅ Addressed for local CLI | Local build/distribution only; no server/container/cloud deployment invented |
 | Operations and reliability | ✅ Addressed | Local runbook, failure modes, backup and recovery |
 | Performance and scalability | ✅ Addressed as observations | No benchmarks or unsupported numeric goals |
 | Privacy and data lifecycle | ✅ Addressed | Plaintext contact data and current retention/deletion behavior documented |
 | Maintenance and project management | ✅ Addressed | Changelog, roadmap, technical debt, risk register, decision log, metrics |
 | GitHub governance | ✅ Addressed | Issue forms, PR template, CODEOWNERS, Dependabot for GitHub Actions |
-| CI/CD and security analysis | ✅ Addressed | Documentation validation, C++ compile, CodeQL |
+| CI/CD and security analysis | ✅ Addressed | Documentation validation, C++ compile/smoke test, CodeQL |
 | Diagrams and visual assets | ✅ Addressed | Editable Mermaid plus original SVG assets |
 | Real application screenshots | ⏸ Deferred | No verified terminal capture produced; no fake GUI screenshots added |
 | Documentation templates | ✅ Addressed | ADR, feature, test, incident, risk, and review-oriented templates |
@@ -37,4 +37,4 @@ This matrix applies the supplied Production-Grade GitHub Repository Enhancement 
 
 ## Evidence boundary
 
-The workflow definitions have been added to the default branch. A workflow is not counted as passing until GitHub reports a successful run. Diagram source checks are structural checks, not a complete Mermaid renderer. Accessibility and security documents are guidance, not audit certificates.
+A workflow is not counted as passing until GitHub reports a successful run. Diagram source checks are structural checks, not a complete Mermaid renderer. Accessibility and security documents are guidance, not audit certificates. The CLI smoke test covers a focused set of real menu operations and is not exhaustive.

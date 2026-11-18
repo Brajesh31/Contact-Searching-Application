@@ -2,14 +2,14 @@
 
 | Feature | Relevant test plan cases | Automated status |
 |---|---|---|
-| Startup loading | T-01 | Not automated |
-| Add and phone checks | T-02, T-03, T-04 | Not automated |
-| Exact search | T-05, T-06, T-08 | Not automated |
-| Partial-name search | T-07 | Not automated |
-| Delete | T-09 | Not automated |
-| Display | T-10 | Not automated |
-| Modify | T-11 | Not automated |
-| VCF export | T-12 | Not automated |
-| Exit | T-13 | Not automated |
+| Startup loading | T-01 | Covered by CLI smoke test |
+| Add and phone checks | T-02, T-03, T-04 | Add-success covered; invalid/duplicate cases manual only |
+| Exact search | T-05, T-06, T-08 | Exact name search covered; phone and missing cases manual only |
+| Partial-name search | T-07 | Case-insensitive substring case covered |
+| Delete | T-09 | Manual only |
+| Display | T-10 | Manual only |
+| Modify | T-11 | Manual only |
+| VCF export | T-12 | Export format and generated file covered |
+| Exit | T-13 | Exercised by smoke test |
 
-The table is a planned manual verification map. It is not evidence that the cases have passed.
+The automated test is an integration smoke check with disposable data. It is not unit-test coverage and does not imply that the untested cases have passed.

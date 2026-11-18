@@ -1,14 +1,20 @@
-name: C++ Build
+name: C++ Build and CLI Smoke Test
 
 on:
   push:
     branches: [main]
     paths:
       - "main.cpp"
+      - "tests/**"
+      - "docs/testing.md"
+      - "docs/testing/**"
       - ".github/workflows/cpp-build.yml"
   pull_request:
     paths:
       - "main.cpp"
+      - "tests/**"
+      - "docs/testing.md"
+      - "docs/testing/**"
       - ".github/workflows/cpp-build.yml"
   workflow_dispatch:
 
@@ -16,13 +22,18 @@ permissions:
   contents: read
 
 jobs:
-  build:
-    name: Compile with GNU C++17
+  build-and-smoke-test:
+    name: Build and exercise the CLI
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Install compiler
         run: sudo apt-get update && sudo apt-get install -y g++
+
       - name: Compile application
         run: g++ -std=gnu++17 -Wall -Wextra -Wpedantic main.cpp -o contact-search
+
+      - name: Run CLI integration smoke test
+        run: python3 tests/test_cli_smoke.py ./contact-search

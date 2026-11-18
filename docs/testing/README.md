@@ -1,9 +1,8 @@
 # 🧪 Testing and Quality
 
-The inspected application has no checked-in automated unit or integration test suite.
-
 - [Testing strategy](../testing.md)
 - [Manual test plan](test-plan.md)
 - [Feature-to-test matrix](feature-test-matrix.md)
+- [Automated CLI smoke test](../../tests/README.md)
 
-The repository validation scripts are not application tests. The C++ CI job performs a compilation check only.
+The repository includes one automated CLI integration smoke test and a GNU++17 compilation workflow. It does not yet contain a dedicated unit-test suite or broad regression coverage.

@@ -107,6 +107,7 @@ Contact-Searching-Application/
 │   ├── templates/
 │   └── testing/
 ├── scripts/
+├── tests/
 ├── main.cpp
 ├── contacts.txt
 ├── Dummy Contacts.txt
@@ -135,7 +136,7 @@ cd Contact-Searching-Application
 ### 2. Compile
 
 ~~~bash
-g++ -std=gnu++17 -Wall -Wextra main.cpp -o contact-search
+g++ -std=gnu++17 -Wall -Wextra -Wpedantic main.cpp -o contact-search
 ~~~
 
 ### 3. Run
@@ -171,7 +172,16 @@ See the [user guide](docs/user-guide.md) for operation details and the [data for
 
 ## 🧪 Validation and testing
 
-The repository now includes documentation and preservation checks plus a C++ compilation workflow. Documentation checks do not execute application logic. The C++ workflow compiles the current source but does not claim unit-test coverage.
+Compile and run the integration smoke test using a temporary directory and synthetic records:
+
+~~~bash
+g++ -std=gnu++17 -Wall -Wextra -Wpedantic main.cpp -o contact-search
+python3 tests/test_cli_smoke.py ./contact-search
+~~~
+
+The smoke test exercises contact loading, adding, exact search, case-insensitive partial-name search, data-file persistence, and vCard export. It does not modify the repository's tracked contacts.txt.
+
+Repository documentation and preservation checks:
 
 ~~~bash
 python3 scripts/validate_docs.py
@@ -181,7 +191,7 @@ python3 scripts/check_license.py
 python3 scripts/repository_audit.py
 ~~~
 
-See [testing strategy](docs/testing.md) and [feature-to-test mapping](docs/testing/feature-test-matrix.md).
+These checks validate documentation/support infrastructure and protected-file integrity. They do not imply exhaustive application test coverage.
 
 ## ⚠️ Known limitations
 
@@ -193,7 +203,7 @@ See [testing strategy](docs/testing.md) and [feature-to-test mapping](docs/testi
 - Several operations scan every bucket, so lookup is not consistently constant-time.
 - Hash-table storage uses manual dynamic allocation.
 - File persistence rewrites the whole data file and is not transactional.
-- No checked-in automated unit/integration test suite or formal production deployment target was present in the original application tree.
+- The automated smoke test covers only a narrow set of real CLI workflows; delete, modify, malformed data, and error paths remain manually documented or untested.
 
 Use a disposable copy of the repository for experiments. Do not store real personal contact details in a public repository.
 
@@ -213,6 +223,7 @@ Contact data is personal information. Use synthetic records in demonstrations, k
 - [Configuration and dependencies](docs/configuration.md)
 - [Development guide](docs/development/README.md)
 - [Testing and QA](docs/testing/README.md)
+- [Automated CLI smoke tests](tests/README.md)
 - [Security and privacy](docs/security.md)
 - [Accessibility review](docs/accessibility/README.md)
 - [Deployment and operations](docs/deployment/README.md)

@@ -1,8 +1,8 @@
 # 🗺️ Roadmap
 
-This roadmap separates the current implementation from possible future work. Items below are proposals, not promises or implemented functionality.
+This roadmap separates current capabilities from possible future work. Items below are proposals, not promises or implemented functionality.
 
-## ✅ Current repository capabilities
+## ✅ Current capabilities
 
 - [x] Terminal menu for contact operations
 - [x] Add, delete, and modify contacts
@@ -11,10 +11,11 @@ This roadmap separates the current implementation from possible future work. Ite
 - [x] Alphabetical contact display
 - [x] Export a contact as vCard 3.0
 - [x] Text-file persistence
+- [x] Automated CLI smoke test for add, search, persistence, and VCF export
 
 ## 🔭 Potential future directions
 
-- [ ] Add automated unit and integration tests.
+- [ ] Expand automated unit and integration coverage for validation failures, duplicates, delete, modify, malformed records, and file-write errors.
 - [ ] Define and validate a robust contact-file format with escaping.
 - [ ] Add safer import/export handling and explicit error reporting.
 - [ ] Evaluate a standard container-based hash table and RAII ownership.

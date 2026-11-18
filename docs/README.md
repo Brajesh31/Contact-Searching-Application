@@ -39,6 +39,7 @@ This documentation set is grounded in the inspected C++ command-line implementat
 - [Code conventions](development/conventions.md)
 - [Testing strategy](testing.md)
 - [Testing plan and feature matrix](testing/README.md)
+- [Automated CLI smoke test](../tests/README.md)
 - [Troubleshooting](troubleshooting.md)
 
 ## 🔐 Security, privacy, and accessibility
