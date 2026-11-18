@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 420" role="img" aria-labelledby="t d">
+<title id="t">Contact lifecycle workflow</title>
+<desc id="d">The application starts, loads contacts, displays the menu, executes a selected operation, rewrites the contact file, and returns to the menu unless exit was selected.</desc>
+<rect width="1100" height="420" rx="24" fill="#f8fafc"/>
+<text x="550" y="48" text-anchor="middle" font-family="Arial" font-size="28" font-weight="700" fill="#0f172a">Contact Lifecycle</text>
+<g font-family="Arial" font-size="18" text-anchor="middle" fill="#fff" stroke="#334155" stroke-width="2">
+<rect x="40" y="155" width="150" height="72" rx="14" fill="#0f766e"/>
+<rect x="245" y="155" width="170" height="72" rx="14" fill="#2563eb"/>
+<rect x="470" y="155" width="160" height="72" rx="14" fill="#4f46e5"/>
+<rect x="690" y="155" width="165" height="72" rx="14" fill="#7c3aed"/>
+<rect x="910" y="155" width="150" height="72" rx="14" fill="#0f766e"/>
+<g stroke="none"><text x="115" y="198">Start</text><text x="330" y="185">Load contacts</text><text x="330" y="208">from file</text><text x="550" y="198">Show menu</text><text x="772" y="185">Run selected</text><text x="772" y="208">operation</text><text x="985" y="198">Save file</text></g>
+</g>
+<g stroke="#475569" stroke-width="4" fill="none"><path d="M190 191h55m170 0h55m160 0h60m165 0h55"/><path d="m230 181 15 10-15 10m205-10 15 10-15 10m205-10 15 10-15 10m205-10 15 10-15 10"/></g>
+<path d="M985 227v100H550V227" fill="none" stroke="#64748b" stroke-width="3" stroke-dasharray="8 8"/>
+<text x="770" y="350" font-family="Arial" font-size="17" text-anchor="middle" fill="#475569">After non-exit operations: rewrite contacts.txt, then continue</text>
+</svg>

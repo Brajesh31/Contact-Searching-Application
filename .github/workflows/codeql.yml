@@ -24,7 +24,6 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: cpp
-          build-mode: autobuild
       - name: Build
         uses: github/codeql-action/autobuild@v3
       - name: Perform CodeQL analysis

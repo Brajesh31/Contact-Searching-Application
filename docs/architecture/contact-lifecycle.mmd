@@ -1,0 +1,15 @@
+flowchart TD
+    Start([Start]) --> Init["Allocate initial hash table"]
+    Init --> Load["Read contacts.txt"]
+    Load --> Parse["Split row into name, phone, email"]
+    Parse --> Insert["Insert contacts into buckets"]
+    Insert --> Menu["Display CLI menu"]
+    Menu --> Choice{"User choice"}
+    Choice -->|Add / delete / modify| Mutate["Change in-memory contacts"]
+    Choice -->|Search / list| Read["Read and display matches"]
+    Choice -->|Export| Export["Write VCF file"]
+    Choice -->|Exit| Finish([Exit])
+    Mutate --> Save["Rewrite contacts.txt"]
+    Read --> Save
+    Export --> Save
+    Save --> Menu

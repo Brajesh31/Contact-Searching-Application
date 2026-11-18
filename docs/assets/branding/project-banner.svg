@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+<title id="title">Contact Searching Application</title>
+<desc id="desc">A dark blue C++ project banner with address-book and magnifying-glass imagery.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1220"/><stop offset="1" stop-color="#172554"/></linearGradient><linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#818cf8"/></linearGradient></defs>
+<rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+<circle cx="1030" cy="40" r="210" fill="#2563eb" opacity=".16"/>
+<circle cx="1110" cy="310" r="150" fill="#06b6d4" opacity=".14"/>
+<g transform="translate(840 60)"><rect width="190" height="238" rx="25" fill="url(#accent)"/><rect x="22" y="24" width="146" height="190" rx="14" fill="#eff6ff"/><path d="M52 65h88M52 98h70M52 131h80" stroke="#64748b" stroke-width="12" stroke-linecap="round"/><circle cx="154" cy="179" r="48" fill="#bae6fd" stroke="#0f172a" stroke-width="12"/><path d="m188 214 42 42" stroke="#0f172a" stroke-width="15" stroke-linecap="round"/></g>
+<text x="76" y="135" fill="#7dd3fc" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="4">C++ • COMMAND-LINE PROJECT</text>
+<text x="76" y="205" fill="#fff" font-family="Arial,sans-serif" font-size="52" font-weight="700">Contact Searching</text>
+<text x="76" y="265" fill="#fff" font-family="Arial,sans-serif" font-size="52" font-weight="700">Application</text>
+<text x="78" y="310" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="22">Manage • Search • Organize • Export</text>
+</svg>

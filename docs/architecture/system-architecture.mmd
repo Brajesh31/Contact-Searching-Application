@@ -1,0 +1,14 @@
+flowchart TB
+    Actor["👤 User"]
+    Terminal["🖥️ Terminal menu"]
+    Operations["⚙️ Contact operations"]
+    Table["🗂️ HashTable and Contact records"]
+    File[("📄 contacts.txt")]
+    VCF["📇 vCard 3.0 export"]
+
+    Actor --> Terminal
+    Terminal --> Operations
+    Operations <--> Table
+    File -->|"startup load"| Table
+    Table -->|"rewrite after menu operation"| File
+    Operations -->|"selected record"| VCF

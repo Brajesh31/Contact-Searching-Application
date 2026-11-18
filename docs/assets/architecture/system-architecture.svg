@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" role="img" aria-labelledby="t d">
+<title id="t">Contact Searching Application system architecture</title>
+<desc id="d">The user interacts with the main terminal menu, which calls contact operations over a hash table; contacts.txt loads and receives persisted records, and VCF files are exported.</desc>
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eff6ff"/><stop offset="1" stop-color="#eef2ff"/></linearGradient></defs>
+<rect width="1100" height="600" rx="26" fill="url(#b)"/>
+<g font-family="Arial,sans-serif" text-anchor="middle">
+<text x="550" y="56" fill="#0f172a" font-size="30" font-weight="700">Application System Architecture</text>
+<g stroke="#334155" stroke-width="4" fill="none"><path d="M550 154v58M550 292v58M550 430v55M355 389H195V485M745 389h160v96"/></g>
+<rect x="390" y="90" width="320" height="64" rx="14" fill="#0f172a"/><text x="550" y="130" fill="#fff" font-size="23">User / Terminal</text>
+<rect x="390" y="212" width="320" height="80" rx="14" fill="#2563eb"/><text x="550" y="260" fill="#fff" font-size="23">main() menu loop</text>
+<rect x="390" y="350" width="320" height="80" rx="14" fill="#4f46e5"/><text x="550" y="398" fill="#fff" font-size="23">Contact operations</text>
+<rect x="390" y="485" width="320" height="75" rx="14" fill="#0f766e"/><text x="550" y="530" fill="#fff" font-size="23">HashTable / Contact</text>
+<rect x="45" y="485" width="300" height="75" rx="14" fill="#fff" stroke="#0f766e" stroke-width="3"/><text x="195" y="530" fill="#0f172a" font-size="22">contacts.txt</text>
+<rect x="755" y="485" width="300" height="75" rx="14" fill="#fff" stroke="#0f766e" stroke-width="3"/><text x="905" y="530" fill="#0f172a" font-size="22">Exported .vcf</text>
+</g></svg>
