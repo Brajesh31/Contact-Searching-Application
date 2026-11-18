@@ -1,0 +1,14 @@
+flowchart TD
+    Input["Read menu or contact input"] --> Parse{"Input valid?"}
+    Parse -->|No| Console["Current code prints limited message or stream may fail"]
+    Parse -->|Yes| Operation["Run selected operation"]
+    Operation --> FileOp{"Filesystem operation?"}
+    FileOp -->|No| Result["Print operation result"]
+    FileOp -->|Yes| Open{"File opened?"}
+    Open -->|No| Error["Export function prints open error"]
+    Open -->|Yes| Write["Write data"]
+    Write --> Result
+    Error --> Caveat["Caller may still print export success"]
+    Result --> Menu["Return to menu"]
+    Caveat --> Menu
+    Console --> Menu

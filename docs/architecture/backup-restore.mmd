@@ -1,0 +1,12 @@
+flowchart TD
+    Before([Before use]) --> Backup["Copy contacts.txt to private backup"]
+    Backup --> Run["Run in intended working directory"]
+    Run --> Change["Application rewrites data file"]
+    Change --> Verify["Review file using synthetic validation"]
+    Verify --> Good{"Data intact?"}
+    Good -->|Yes| Continue([Continue use])
+    Good -->|No| Stop["Stop application"]
+    Stop --> SaveCurrent["Preserve damaged copy"]
+    SaveCurrent --> Restore["Restore last known-good backup"]
+    Restore --> VerifyAgain["Validate restored file"]
+    VerifyAgain --> Continue

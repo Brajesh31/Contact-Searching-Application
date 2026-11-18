@@ -1,31 +1,40 @@
 # 📁 Project Structure
 
-## Original application files
+This structure reflects the tracked application and added repository-support areas. The complete per-file list is visible in GitHub's repository tree.
+
+## Original application and data
 
 | Path | Purpose |
 |---|---|
-| main.cpp | Complete C++ command-line implementation |
-| contacts.txt | Startup contact data and runtime persistence target |
-| Dummy Contacts.txt | Additional sample contact rows |
-| Eswar.vcf, Vignesh.vcf | Existing example vCard files |
-| Contact Searching Appliaction.pptx | Existing project presentation; filename spelling is preserved |
-| .vscode/c_cpp_properties.json | VS Code compiler and IntelliSense configuration |
-| .vscode/settings.json | VS Code file associations |
-| .idea/.gitignore | Existing IDE-specific ignore rules |
+| main.cpp | Complete C++ CLI application |
+| contacts.txt | Startup data and runtime persistence target |
+| Dummy Contacts.txt | Existing additional sample |
+| Eswar.vcf, Vignesh.vcf | Existing vCard examples |
+| Contact Searching Appliaction.pptx | Existing presentation, filename spelling preserved |
+| .vscode/ | Existing compiler/editor configuration |
+| .idea/.gitignore | Existing IDE ignore rules |
 | .gitignore | Existing executable ignore rule |
 
-## Added repository support
+## Repository support
 
-| Path | Responsibility |
+| Directory/path | Responsibility |
 |---|---|
-| docs/ | Product, architecture, usage, development, security, accessibility, testing, operations, maintenance documentation |
-| docs/architecture/ | Editable Mermaid diagrams and architecture decision record |
-| docs/assets/ | Project branding and original technical diagrams |
+| Root governance files | License, authorship, contribution, security, support, governance and status |
+| .github/ISSUE_TEMPLATE/ | Bug, feature, docs, security, accessibility, performance and question forms |
+| .github/workflows/ | C++ build/smoke, docs validation, CodeQL, Gitleaks |
+| docs/product/ | Product overview, feature details, requirements and journeys |
+| docs/architecture/ | Architecture documentation, Mermaid diagrams and ADRs |
+| docs/security/, docs/privacy/ | Threats, controls, data lifecycle and recovery |
+| docs/accessibility/ | Terminal accessibility review guidance |
+| docs/testing/ | Manual test plan and feature-to-test mapping |
+| docs/development/ | Build, debugging, tooling and workflow guidance |
+| docs/deployment/, docs/operations/ | Local distribution and operating procedures |
+| docs/maintenance/ | Technical debt, risks, metrics, decisions and release management |
 | docs/templates/ | Reusable product and engineering templates |
-| scripts/ | Documentation, asset, license, and preservation validators |
-| .github/ISSUE_TEMPLATE/ | Structured issue forms |
-| .github/workflows/ | Documentation validation, C++ compile, CodeQL, and retired legacy workflow notice |
+| docs/assets/ | Branding, technical illustrations and workflow visuals |
+| scripts/ | Repository, Markdown, asset, license, security and environment checks |
+| tests/ | Disposable-data CLI integration smoke test |
 
 ## Preservation
 
-The original C++ source, contact samples, VCF examples, PowerPoint, IDE settings, and .gitignore are preserved. Their original Git blob identifiers are checked by scripts/repository_audit.py.
+The original C++ source, contact samples, VCF files, presentation, IDE configuration and .gitignore are checked by exact Git blob IDs in scripts/repository_audit.py.

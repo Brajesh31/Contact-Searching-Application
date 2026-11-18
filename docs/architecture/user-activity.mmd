@@ -1,0 +1,19 @@
+flowchart TD
+    Start([Start]) --> Menu["Read menu"]
+    Menu --> Choice{"Choose operation"}
+    Choice --> Add["Add contact"]
+    Choice --> Del["Delete contact"]
+    Choice --> Export["Export contact"]
+    Choice --> Display["Display contacts"]
+    Choice --> Exact["Exact search"]
+    Choice --> Partial["Partial-name search"]
+    Choice --> Modify["Modify contact"]
+    Choice --> Exit([Exit])
+    Add --> Save["Rewrite contacts.txt"]
+    Del --> Save
+    Export --> Save
+    Display --> Save
+    Exact --> Save
+    Partial --> Save
+    Modify --> Save
+    Save --> Menu

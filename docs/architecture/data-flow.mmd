@@ -1,0 +1,11 @@
+flowchart LR
+    File[("contacts.txt")] --> Read["ifstream line read"]
+    Read --> Parse["Split by comma"]
+    Parse --> Contact["Contact record"]
+    Contact --> Table["HashTable buckets"]
+    Table --> Search["Search / display / modify / delete"]
+    Search --> Output["Terminal output"]
+    Table --> Write["ofstream full rewrite"]
+    Write --> File
+    Table --> VCF["exportToVCF()"]
+    VCF --> VCard[".vcf file"]

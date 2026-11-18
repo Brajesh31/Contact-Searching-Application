@@ -1,17 +1,18 @@
-# 📦 Distribution and Deployment
+# 📦 Deployment and Distribution
 
-The current deliverable is a local command-line executable. No production server, web hosting, container, or cloud deployment architecture exists in the inspected repository.
+This repository produces a local C++ command-line executable. No hosted production runtime, Docker image, Kubernetes topology, cloud account, database, staging server or remote deployment exists.
 
 ## Local distribution
 
-1. Compile with a compatible GNU++17 toolchain.
-2. Provide the executable and a suitable contacts.txt data file.
-3. Keep personal contact records private.
-4. Run from a directory where the data file can be found.
-5. Back up the data file before usage.
+1. Install a GNU++17-compatible compiler.
+2. Compile main.cpp using the build guide.
+3. Place an intended contacts.txt in the process working directory.
+4. Keep private address books outside the public repository.
+5. Keep a private backup before running operations.
+6. Verify any exported VCF file.
 
-See [build guide](../development/build.md) and [backup/recovery](../security/backup-recovery.md).
+## CI/CD
 
-## Release process
+GitHub Actions validates docs, compiles the executable, runs a temporary-data CLI smoke test, runs CodeQL, and scans repository history for secrets. These are CI checks, not an application deployment pipeline.
 
-No formal tagged release history or binary distribution process was present in the audited tree.
+See the CI/CD architecture, GitHub Actions, and deployment-environments documents.

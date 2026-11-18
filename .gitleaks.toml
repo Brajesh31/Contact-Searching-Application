@@ -1,0 +1,7 @@
+title = "Contact Searching Application secret scanning"
+
+[extend]
+useDefault = true
+
+# Do not add allowlists for credential-looking values without a documented,
+# reviewed reason. Synthetic .invalid test addresses are not secrets.

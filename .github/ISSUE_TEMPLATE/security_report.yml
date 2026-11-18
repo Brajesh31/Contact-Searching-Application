@@ -1,0 +1,20 @@
+name: "🔐 Security report guidance"
+description: Do not report vulnerabilities publicly. Use private vulnerability reporting.
+title: "[Security report guidance]"
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not disclose a vulnerability in a public issue.**
+        Use the repository's private vulnerability reporting feature:
+        https://github.com/Brajesh31/Contact-Searching-Application/security/advisories/new
+
+        Do not include contact data, credentials, exploit details, or private files here.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I understand that this is a public issue form and will use private reporting for vulnerability details.
+          required: true

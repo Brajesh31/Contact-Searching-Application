@@ -1,0 +1,9 @@
+flowchart TD
+    Start([Release proposed]) --> Version{"Version policy defined?"}
+    Version -->|No| Defer["Do not publish a formal version"]
+    Version -->|Yes| Build["Compile release commit"]
+    Build --> Test["Run CLI smoke test and manual cases"]
+    Test --> Docs["Validate docs, assets, and license"]
+    Docs --> Security["Review CodeQL and secret scan"]
+    Security --> Notes["Prepare changelog and known limitations"]
+    Notes --> Publish["Tag and publish artifacts"]

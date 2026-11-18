@@ -103,6 +103,9 @@ def main() -> int:
             if marker not in vcard:
                 return fail(f"vCard export is missing expected field: {marker}", result.stdout, result.stderr)
 
+        print("--- Captured CLI session using synthetic data ---")
+        print(result.stdout.rstrip())
+
     print("PASS: startup contact loading and add operation.")
     print("PASS: exact name search and case-insensitive partial-name search.")
     print("PASS: updated records persisted in the temporary contact file.")

@@ -1,0 +1,13 @@
+flowchart TD
+    Start([Search choice]) --> Type{"Menu option"}
+    Type -->|5 Exact| Input["Read name or phone"]
+    Type -->|6 Partial| Query["Read name substring"]
+    Input --> Scan["Scan buckets"]
+    Query --> Lower["Lowercase name and query"]
+    Lower --> Find["string::find substring"]
+    Scan --> Match{"Exact match found?"}
+    Find --> PartialMatch{"Substring match found?"}
+    Match -->|Yes| Print["Print contact"]
+    Match -->|No| Missing["Print not found"]
+    PartialMatch -->|Yes| Print
+    PartialMatch -->|No| Missing

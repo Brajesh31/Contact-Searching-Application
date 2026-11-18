@@ -1,0 +1,8 @@
+flowchart TD
+    Start([Change submitted]) --> Docs["Validate docs and local links"]
+    Docs --> Assets["Validate SVG and Mermaid structure"]
+    Assets --> Audit["Check required files and protected hashes"]
+    Audit --> Build["Compile GNU++17 executable"]
+    Build --> Smoke["Run CLI smoke test in temporary directory"]
+    Smoke --> CodeQL["Run CodeQL analysis"]
+    CodeQL --> Done([CI evidence available])

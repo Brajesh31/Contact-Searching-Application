@@ -1,16 +1,42 @@
 # 🖼️ Project Assets
 
-## Original project visuals
+All SVG illustrations are original project-specific assets. They include accessible title and desc elements. Markdown references should provide meaningful alt text.
 
-- Branding logo: [logo.svg](branding/logo.svg)
-- README banner: [project-banner.svg](branding/project-banner.svg)
-- System architecture illustration: [system-architecture.svg](architecture/system-architecture.svg)
-- Contact lifecycle flow: [contact-lifecycle.svg](workflows/contact-lifecycle.svg)
+## Branding
 
-## Screenshot and demo policy
+- [Logo](branding/logo.svg)
+- [Favicon](branding/favicon.svg)
+- [Project banner](branding/project-banner.svg)
+- [Contribution banner](branding/contribution-banner.svg)
+- [Documentation banner](branding/documentation-banner.svg)
 
-No authentic application screenshots or screen recordings were present in the original repository tree, and none are fabricated here. This project has a terminal interface rather than graphical pages. Add terminal captures only after running the actual compiled program, using synthetic contact data and recording the terminal dimensions and environment.
+## Architecture
 
-## Source of diagrams
+- [System architecture](architecture/system-architecture.svg)
+- [System context](architecture/system-context.svg)
+- [Component architecture](architecture/component-architecture.svg)
+- [Data flow](architecture/data-flow.svg)
+- [Security overview](architecture/security-overview.svg)
 
-Editable Mermaid source files are maintained in docs/architecture. SVG illustrations are standalone assets with accessible title and description elements.
+## Workflows
+
+- [Contact lifecycle](workflows/contact-lifecycle.svg)
+- [Application workflow](workflows/application-workflow.svg)
+- [Search flow](workflows/search-flow.svg)
+- [Error handling](workflows/error-handling.svg)
+- [Testing workflow](workflows/testing-flow.svg)
+- [Backup and restore](workflows/backup-restore.svg)
+- [Release flow](workflows/release-flow.svg)
+
+## Illustrations
+
+- [Feature overview](illustrations/feature-overview.svg)
+- [Technology stack](illustrations/technology-stack.svg)
+
+## Authentic screenshot and demo policy
+
+This is a terminal program, not a graphical website. No homepage, dashboard, mobile, responsive, browser, or tablet screenshot applies. No fabricated screenshot or unrelated stock visual is included. A terminal transcript or screenshot must come from the actual executable, use synthetic values, and be labelled accurately. No such capture is currently published.
+
+## Editable sources
+
+Mermaid diagram sources are maintained in docs/architecture/. SVG files provide scalable, directly viewable illustrations.

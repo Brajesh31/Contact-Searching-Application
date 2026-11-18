@@ -1,0 +1,10 @@
+flowchart TD
+    Start([User launches executable]) --> Loaded["contacts.txt load attempted"]
+    Loaded --> Menu["Menu displayed"]
+    Menu --> Select["User selects option"]
+    Select --> Prompt["Application prompts for values"]
+    Prompt --> Operation["Operation executes"]
+    Operation --> Output["Result printed"]
+    Output --> Persist["contacts.txt rewrite attempted"]
+    Persist --> Menu
+    Menu -->|Option 8| Exit([Exit])

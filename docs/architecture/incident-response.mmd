@@ -1,0 +1,8 @@
+flowchart TD
+    Detect["Suspected data exposure or corruption"] --> Stop["Stop the application"]
+    Stop --> Preserve["Preserve affected files securely"]
+    Preserve --> Assess["Assess affected records and repository history"]
+    Assess --> Contain["Restrict exposure / rotate affected credentials"]
+    Contain --> Restore["Restore from known-good backup if required"]
+    Restore --> Verify["Validate with synthetic data"]
+    Verify --> Record["Record actions without personal data"]

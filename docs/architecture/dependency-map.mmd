@@ -1,0 +1,12 @@
+flowchart TB
+    App["Contact Searching Application"]
+    Standard["C++ standard library"]
+    Compiler["GCC-compatible GNU++17 toolchain"]
+    Python["Python 3 repository checks"]
+    Actions["GitHub Actions"]
+    CodeQL["CodeQL"]
+    App --> Standard
+    App --> Compiler
+    Python --> Actions
+    CodeQL --> Actions
+    Actions --> Compiler
