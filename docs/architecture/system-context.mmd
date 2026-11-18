@@ -1,0 +1,8 @@
+flowchart LR
+    Person["User at terminal"]
+    App["Contact Searching Application"]
+    LocalFile[("contacts.txt")]
+    VCard["Exported vCard file"]
+    Person -->|"menu input"| App
+    App -->|"read/write"| LocalFile
+    App -->|"optional contact export"| VCard

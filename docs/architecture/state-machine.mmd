@@ -1,0 +1,7 @@
+stateDiagram-v2
+    [*] --> Loading
+    Loading --> Ready: contacts file read
+    Ready --> Processing: menu choice received
+    Processing --> Persisting: non-exit option complete
+    Persisting --> Ready: file write attempted
+    Processing --> [*]: exit selected

@@ -1,0 +1,24 @@
+classDiagram
+    class Contact {
+        +string name
+        +string phoneNumber
+        +string email
+    }
+    class HashTable {
+        +int size
+        +vector~Contact~* table
+    }
+    HashTable "1" o-- "*" Contact : buckets contain
+    class Operations {
+        +insertContact()
+        +contactExists()
+        +getContact()
+        +deleteContact()
+        +Search()
+        +fuzzySearch()
+        +modify()
+        +display()
+        +exportToVCF()
+    }
+    Operations ..> Contact
+    Operations ..> HashTable

@@ -1,0 +1,20 @@
+sequenceDiagram
+    actor User
+    participant CLI as main()
+    participant Data as contacts.txt
+    participant Table as HashTable
+    participant Export as VCF output
+
+    CLI->>Table: Allocate initial buckets
+    CLI->>Data: Read rows at startup
+    Data-->>CLI: Comma-delimited records
+    CLI->>Table: Insert parsed contacts
+    loop Menu iteration
+        CLI->>User: Display choices and prompt
+        User-->>CLI: Menu choice and values
+        CLI->>Table: Execute operation
+        opt Export choice
+            CLI->>Export: Write vCard fields
+        end
+        CLI->>Data: Rewrite current contacts
+    end

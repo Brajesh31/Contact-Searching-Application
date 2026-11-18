@@ -1,0 +1,20 @@
+flowchart TB
+    Main["main()"]
+    Load["Startup file loader"]
+    Dispatch["Menu dispatch"]
+    Insert["insertContact / rehash"]
+    Exists["contactExists / getContact"]
+    Search["Search / fuzzySearch"]
+    Modify["modify / deleteContact"]
+    Display["display"]
+    Export["exportToVCF"]
+    Persist["contacts.txt writer"]
+    Main --> Load
+    Main --> Dispatch
+    Dispatch --> Insert
+    Dispatch --> Exists
+    Dispatch --> Search
+    Dispatch --> Modify
+    Dispatch --> Display
+    Dispatch --> Export
+    Dispatch --> Persist

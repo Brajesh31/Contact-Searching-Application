@@ -1,0 +1,42 @@
+name: Documentation Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "docs/**"
+      - "scripts/**"
+      - ".github/workflows/docs-validation.yml"
+  pull_request:
+    paths:
+      - "README.md"
+      - "docs/**"
+      - "scripts/**"
+      - ".github/workflows/docs-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  documentation:
+    name: Validate docs and supporting assets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate local documentation links
+        run: python scripts/validate_docs.py
+      - name: Validate SVG assets
+        run: python scripts/validate_svg.py
+      - name: Validate Mermaid source structure
+        run: python scripts/validate_mermaid.py
+      - name: Check license
+        run: python scripts/check_license.py
+      - name: Verify repository and preservation boundary
+        run: python scripts/repository_audit.py

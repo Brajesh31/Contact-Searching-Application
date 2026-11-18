@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔐 Private security reporting
+    url: https://github.com/Brajesh31/Contact-Searching-Application/security/advisories/new
+    about: Use private vulnerability reporting when enabled. Do not post sensitive details publicly.
+  - name: 📖 Project documentation
+    url: https://github.com/Brajesh31/Contact-Searching-Application/tree/main/docs
+    about: Read the usage and troubleshooting guides first.

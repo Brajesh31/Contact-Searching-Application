@@ -1,0 +1,11 @@
+flowchart TB
+    User["Terminal user"] --> Process["Single C++ process"]
+    subgraph Process["Contact Searching Application process"]
+        Menu["main() menu loop"]
+        Operations["Contact operations"]
+        Table["HashTable + vector<Contact> buckets"]
+        Menu --> Operations
+        Operations <--> Table
+    end
+    Data[("Local contacts.txt")] <--> Process
+    Export["Local .vcf output"] <-- Process

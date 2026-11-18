@@ -1,0 +1,28 @@
+name: "♿ Accessibility issue"
+description: Report a terminal usability or assistive-technology concern.
+title: "[Accessibility]: "
+labels: ["accessibility"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Accessibility barrier
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Terminal, operating system, and assistive technology
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Data privacy
+      options:
+        - label: I removed real contact details and personal data.
+          required: true

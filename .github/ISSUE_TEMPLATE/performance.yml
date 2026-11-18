@@ -1,0 +1,26 @@
+name: "⚡ Performance report"
+description: Report a reproducible performance concern with synthetic data.
+title: "[Performance]: "
+labels: ["performance"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Performance concern
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Compiler and operating system
+  - type: textarea
+    id: dataset
+    attributes:
+      label: Synthetic dataset size and characteristics
+  - type: textarea
+    id: measurements
+    attributes:
+      label: Measurements and reproduction steps
+      description: Include how measurements were taken. Do not claim a regression without a baseline.
+    validations:
+      required: true

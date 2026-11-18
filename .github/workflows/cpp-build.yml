@@ -1,0 +1,28 @@
+name: C++ Build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "main.cpp"
+      - ".github/workflows/cpp-build.yml"
+  pull_request:
+    paths:
+      - "main.cpp"
+      - ".github/workflows/cpp-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Compile with GNU C++17
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install compiler
+        run: sudo apt-get update && sudo apt-get install -y g++
+      - name: Compile application
+        run: g++ -std=gnu++17 -Wall -Wextra -Wpedantic main.cpp -o contact-search
