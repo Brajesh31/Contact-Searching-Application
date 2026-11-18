@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Validate local links in repository Markdown without changing files."""
+"""Validate local Markdown links in root policy files and the docs tree."""
 from pathlib import Path
 import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-DOCS = [ROOT / "README.md", ROOT / "CONTRIBUTING.md", ROOT / "SECURITY.md"]
-DOCS += sorted((ROOT / "docs").rglob("*.md"))
+DOCS = sorted(ROOT.glob("*.md")) + sorted((ROOT / "docs").rglob("*.md"))
 LINK_RE = re.compile(r"!?(?:\[[^\]]*\])\(([^)]+)\)")
 errors = []
 checked = 0
@@ -37,4 +36,4 @@ if errors:
     for error in errors:
         print(f"ERROR: {error}")
     sys.exit(1)
-print(f"PASS: checked {len(DOCS)} documentation files and {checked} local links.")
+print(f"PASS: checked {len(DOCS)} Markdown files and {checked} local links.")
