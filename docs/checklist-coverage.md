@@ -1,7 +1,8 @@
 # ✅ Master Production-Grade Repository Checklist Coverage
 
-**Repository:** Brajesh31/Contact-Searching-Application  
-**Implementation:** single-process C++ CLI in main.cpp  
+**Repository:** Brajesh31/Contact-Searching-Application
+
+**Implementation:** single-process C++ CLI in main.cpp
 **Checklist basis:** the complete 20-section Master Production-Grade GitHub Repository Standard supplied for this task.
 
 ## Classification
