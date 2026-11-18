@@ -20,11 +20,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v4
         with:
           languages: cpp
-      - name: Build
-        uses: github/codeql-action/autobuild@v3
+
+      - name: Install compiler
+        run: sudo apt-get update && sudo apt-get install -y g++
+
+      - name: Compile application for CodeQL tracing
+        run: g++ -std=gnu++17 -Wall -Wextra -c main.cpp -o /tmp/contact-search.o
+
       - name: Perform CodeQL analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v4
