@@ -14,7 +14,7 @@ Prompts for a phone number and removes the first matching record. A message is p
 
 ### 3. Export contact to VCF
 
-Prompts for a name or phone number. If the contact is found, a file named after the contact's name is written in vCard 3.0 format in the current working directory.
+Prompts for a name or phone number. If the contact is found, the program attempts to write a file named after the contact's name in vCard 3.0 format in the current working directory. The export routine can report a file-open failure; the calling menu code may still print its success message, so verify that the file exists.
 
 ### 4. Display contacts
 
